@@ -1,4 +1,8 @@
 def read_template(path):
+    '''
+    this function just te read and Check the path
+    
+    '''
     try:
         with open(path) as file :
             content = file.read()
@@ -7,6 +11,10 @@ def read_template(path):
         raise FileNotFoundError 
 
 def parse_template(contents):
+    '''
+    this function to to separate the content for static  string and tuple which contains key word that the user have to  fill it 
+    
+    '''
     string_content = str(contents)
     key_word = []
     check_in_brackets = False
@@ -30,6 +38,11 @@ def parse_template(contents):
     return (out_s_brachets, tuple(key_word))
 
 def merge(content,key_word):
+
+    '''
+     this function just to  marge the static string with the key word 
+    
+    '''
     final_reusalt = content.format(*key_word)
     return   final_reusalt 
 
